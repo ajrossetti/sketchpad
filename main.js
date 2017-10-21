@@ -29,9 +29,6 @@ $(document).ready(function(){
         });
     }
 
-    populateGrid();
-
-
     // returns a random hex colour code
     function randomColour(){
 
@@ -40,12 +37,33 @@ $(document).ready(function(){
 
         // gen random hex code
         for (var i = 0; i < 6; i++){
-        	var rand = Math.floor(Math.random() * characters.length);
-        	code += characters[rand];
+            var rand = Math.floor(Math.random() * characters.length);
+            code += characters[rand];
         }
 
         return code;
     }
 
+
+    // initially populate the grid at 16x16
+    populateGrid();
+
+
+    // when the clear button is clicked, all the boxes are set to white
+    $('#clearGrid').on('click', function(){
+        $('.grid-box').css('background-color', '#ffffff');
+    });
+
+
+    // when the change size button is clicked, get a new width and height from
+    // the user, and change the dimensions of the grid
+    $('#changeSize').on('click', function(){
+        $('.grid-box').remove();
+        var newHeight = prompt("Enter how many squares high you would like the grid");
+        var newWidth = prompt("Enter how many squares wide you would like the grid");
+        height = newHeight;
+        width = newWidth;
+        populateGrid();
+    });
 
 });
