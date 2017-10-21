@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #e4ffd1;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#grid {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 60px;
+    border: 1px solid black;
+}
+
+.grid-box {
+    border: 1px solid black;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    background-color: #ffffff;
+}
